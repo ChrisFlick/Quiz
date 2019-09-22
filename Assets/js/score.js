@@ -13,7 +13,9 @@ if (scoreboard) {
 
 time.textContent = score;
 
-playerScore.addEventListener("submit", () => {
+playerScore.addEventListener("submit", (event) => {
+  event.preventDefault();
   scoreboard.push([score, initials.value]);
+  localStorage.setItem('scoreboard', JSON.stringify(scoreboard))
   window.location = "highScore.html";
 })
