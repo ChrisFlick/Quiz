@@ -37,6 +37,9 @@ for (let i = 0; i < btn.length; i++) {
         feedback.textContent = "Correct!"
       } else {
         time -= 15;
+        if (time < 0) {
+          time = 0;
+        }
         feedback.textContent = "Wrong!"
       }
 
